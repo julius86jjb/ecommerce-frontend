@@ -112,7 +112,7 @@ export class CartComponent implements OnInit, OnDestroy{
   }
 
   onCheckout(): void {
-    this.http.post('http://localhost:4242/checkout', {
+    this.http.post('https://ecommerce-express-server-hkqh.onrender.com/checkout', {
       items: this.cart.items
     }).subscribe(async(res:any) => {
       let stripe = await loadStripe('pk_test_51OVWQLHOraHpQAo7SvxNYnVPg0tncxHijJ6bSRZdtIIYu8Zra5MgmEzUR0M5U7IIGx4y1Ds9cOgRL1fzCu4W6BOk00Vg3livCs');
