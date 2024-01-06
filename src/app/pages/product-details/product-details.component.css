@@ -1,0 +1,14 @@
+.go_back{
+  margin-bottom: 10px;
+}
+
+.go_back a span{
+  font-size: 11px;
+  /* cursor: pointer; */
+  color: #444444;
+}
+
+button:disabled{
+  opacity: 0.3;
+}
+

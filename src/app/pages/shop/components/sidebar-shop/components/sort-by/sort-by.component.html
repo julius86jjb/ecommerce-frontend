@@ -1,0 +1,15 @@
+<div class="sidebar__categories">
+  <div class="section-title">
+    <h4>Sort By</h4>
+  </div>
+  <div class="blog__sidebar__tags">
+    <a type="button" (click)="onOrderBy('price_asc')" [ngClass]="{'active': this.currentOrder === 'price_asc'}"
+      type="button">Price Asc</a>
+    <a type="button" (click)="onOrderBy('price_desc')" [ngClass]="{'active': this.currentOrder === 'price_desc'}"
+      type="button">Price Desc</a>
+    <a type="button" (click)="onOrderBy('rate_asc')" [ngClass]="{'active': this.currentOrder === 'rate_asc'}"
+      type="button">Rating Asc</a>
+    <a type="button" (click)="onOrderBy('rate_desc')" [ngClass]="{'active': this.currentOrder === 'rate_desc'}"
+      type="button">Rating Desc</a>
+  </div>
+</div>

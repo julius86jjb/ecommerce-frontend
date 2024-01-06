@@ -1,0 +1,43 @@
+<div class="sidebar__filter">
+  <div class="section-title">
+    <h4>Shop by Rating</h4>
+  </div>
+  <div class="rating" (click)="onRating(4)" [ngClass]="{'active': this.currentRating === 1} ">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+    <span class="o-mas"> o más</span>
+     <span *ngIf="this.currentRating === 4" class="icon_close_category">(x)</span>
+
+  </div>
+  <div class="rating" (click)="onRating(3)" [ngClass]="{'active': this.currentRating === 2} ">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <span class="o-mas"> o más</span>
+     <span *ngIf="this.currentRating === 3" class="icon_close_category">(x)</span>
+  </div>
+  <div class="rating" (click)="onRating(2)" [ngClass]="{'active': this.currentRating === 3} ">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <span class="o-mas"> o más</span>
+     <span *ngIf="this.currentRating === 2" class="icon_close_category">(x)</span>
+  </div>
+  <div class="rating" (click)="onRating(1)" [ngClass]="{'active': this.currentRating === 4} ">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <span class="o-mas"> o más</span>
+     <span *ngIf="this.currentRating === 1" class="icon_close_category">(x)</span>
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="shop__sidebar">
+
+  <app-categories></app-categories>
+  <app-sort-by></app-sort-by>
+  <app-filter-by-price [minValue]="minPrice" [maxValue]="maxPrice"></app-filter-by-price>
+  <app-filter-by-rate></app-filter-by-rate>
+
+  <button (click)="onResetFilters()">Reset all filters</button>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+
+
+
+  <div class="col-lg-12 col-md-12">
+    <div class="d-flex justify-content-center" *ngIf="this.cargando">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 col-md-12 search-box" *ngIf="products && !this.cargando">
+    <app-search-box></app-search-box>
+  </div>
+
+  <ng-container *ngIf="products">
+    <div class="col-lg-4 col-md-6"
+      *ngFor="let item of products | byRating:rating | priceRange:minPrice:maxPrice | sortBy:orderBy ">
+      <app-product-item [product]="item" *ngIf="!this.cargando"></app-product-item>
+    </div>
+  </ng-container>
+
+  <div
+    *ngIf="(products | byRating:rating | priceRange:minPrice:maxPrice | sortBy:orderBy ).length <=0 && !this.cargando"
+    class="col-lg-12">
+    <h6 class="coupon__link">No product found</h6>
+  </div>
+
+
+
+
+</div>

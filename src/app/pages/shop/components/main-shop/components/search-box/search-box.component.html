@@ -1,0 +1,16 @@
+<div class="input-group ">
+  <input (keyup.enter)="onSearch( txtTermInput.value )" #txtTermInput
+         class="form-control py-2 border-right-0 border" type="search" placeholder="Search Product...">
+  <span class="input-group-append">
+    <button (click)="onSearch( txtTermInput.value )"
+            class="btn btn-outline-secondary border-left-0 border"
+            type="button">
+      <i class="fa fa-search"></i>
+    </button>
+  </span>
+  <div class="col-12 mt-2" *ngIf="currentSearch">
+    <a type="button" (click)="clearSearch()">
+      <span style="font-weight: normal;" class="badge badge-pill badge-secondary">'{{currentSearch}}' <span style="font-weight: bold;">x</span></span>
+    </a>
+  </div>
+</div>

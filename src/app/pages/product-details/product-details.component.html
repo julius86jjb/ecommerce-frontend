@@ -1,0 +1,122 @@
+<section class="product-details spad">
+  <div class="container" *ngIf="this.loading">
+    <div class="col-lg-12 col-md-12">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="!this.loading">
+    <div class="row">
+      <div class="col-lg-12 go_back">
+        <a routerLink="/"><span> &lt; Volver a resultados</span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <img [src]="product.image" height="550px">
+      </div>
+      <div class="col-lg-6">
+        <div class="product__details__text">
+          <h3>{{product.title}}<span>Category: {{product.category}}</span></h3>
+          <div class="rating">
+            <i class="fa fa-star" *ngIf="product.rating.rate > 0.5"></i>
+            <i class="fa fa-star" *ngIf="product.rating.rate > 1.5"></i>
+            <i class="fa fa-star" *ngIf="product.rating.rate > 2.5"></i>
+            <i class="fa fa-star" *ngIf="product.rating.rate > 3.5"></i>
+            <i class="fa fa-star" *ngIf="product.rating.rate > 4.5"></i>
+            <span>( {{product.rating.count}} reviews )</span>
+          </div>
+          <div class="product__details__price">$ {{product.price | number:'1.1-3' }} <span>$ {{product.price - 15 | number:'1.1-3'}}</span></div>
+          <p>{{product.description}}</p>
+          <div class="product__details__button">
+            <div class="quantity">
+              <span>Quantity:</span>
+              <div class="pro-qty">
+                <input [formControl]="quantity" type="number">
+              </div>
+            </div>
+            <button (click)="onAddToCart()" [disabled]="this.quantity.errors" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
+            <ul>
+              <li><a><span class="icon_heart_alt"></span></a></li>
+              <li><a><span class="icon_adjust-horiz"></span></a></li>
+            </ul>
+          </div>
+          <div class="product__details__widget">
+            <ul>
+              <li>
+                <span>Availability:</span>
+                <div class="stock__checkbox">
+                  <label for="stockin">
+                    In Stock
+                    <input disabled type="checkbox" id="stockin">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <span>Available color:</span>
+                <div class="color__checkbox">
+                  <label for="red">
+                    <input disabled type="radio" name="color__radio" id="red">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label for="black">
+                    <input disabled type="radio" name="color__radio" id="black">
+                    <span class="checkmark black-bg"></span>
+                  </label>
+                  <label for="grey">
+                    <input disabled type="radio" name="color__radio" id="grey">
+                    <span class="checkmark grey-bg"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <span>Available size:</span>
+                <div class="size__btn">
+                  <label for="xs-btn" class="active">
+                    <input type="radio" id="xs-btn">
+                    xs
+                  </label>
+                  <label for="s-btn">
+                    <input type="radio" id="s-btn">
+                    s
+                  </label>
+                  <label for="m-btn">
+                    <input type="radio" id="m-btn">
+                    m
+                  </label>
+                  <label for="l-btn">
+                    <input type="radio" id="l-btn">
+                    l
+                  </label>
+                </div>
+              </li>
+              <li>
+                <span>Promotions:</span>
+                <p>Free shipping</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <br><br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="related__title">
+          <h5>RELATED PRODUCTS</h5>
+        </div>
+      </div>
+      <ng-container *ngIf="productsRelated">
+        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let item of productsRelated ">
+          <app-product-item [product]="item"></app-product-item>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

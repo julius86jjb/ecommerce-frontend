@@ -1,0 +1,10 @@
+.o-mas {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111111;
+  margin-left: 5px;
+}
+
+.rating {
+  cursor: pointer;
+}

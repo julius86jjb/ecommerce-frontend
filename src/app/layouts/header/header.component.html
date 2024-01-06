@@ -1,0 +1,69 @@
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay" [ngClass]="{ 'active': this.showMobileMenu}"></div>
+<div class="offcanvas-menu-wrapper" [ngClass]="{ 'active': this.showMobileMenu}">
+  <div class="offcanvas__close" (click)="this.closeMobileMenu()">+</div>
+  <div class="offcanvas__logo">
+    <span class="nav-title2">Angular Ecommerce</span>
+  </div>
+  <ul class="offcanvas__widget">
+    <li><a [routerLink]="['cart']"><span class="icon_cart_alt"></span>
+        <div class="tip">{{cartItems}}</div>
+      </a>
+    </li>
+  </ul>
+
+
+</div>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-3 col-lg-2">
+        <!-- <div class="header__logo">
+          <a href="./index.html"><img src="../../../assets/img/logo.png" alt="">
+          </a>
+
+        </div> -->
+
+      </div>
+      <div class="col-xl-6 col-lg-7">
+        <div class="header__menu">
+          <span class="nav-title">Angular Ecommerce</span>
+        </div>
+
+        <!-- <nav class="header__menu">
+          <ul>
+            <li><a (click)="onChangeCategory(null)">Home</a></li>
+            <li *ngFor="let item of categories" [ngClass]="{'active': this.currentCategory === item}">
+              <a (click)="onChangeCategory(item)">
+                {{item | titlecase}}
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+      <div class="col-lg-3">
+        <div class="header__right">
+
+          <ul class="header__right__widget">
+            <!-- <li (click)="openSearch()"><span class="icon_search search-switch" title="Search Products"></span></li> -->
+            <li><a routerLink="cart"><span class="icon_cart_alt" title="View Cart"></span>
+                <div *ngIf="cartItems" class="tip">{{cartItems}}</div>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="canvas__open" (click)="openMobileMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- Header Section End -->
+
+<app-search></app-search>
