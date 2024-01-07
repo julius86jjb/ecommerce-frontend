@@ -59,7 +59,6 @@ export class MainShopComponent implements OnInit, OnDestroy {
     this.shopService.getProducts()
       .subscribe(() => {
         this.cargando = false;
-        console.log(this.products);
     })
   }
 
@@ -69,7 +68,6 @@ export class MainShopComponent implements OnInit, OnDestroy {
     this.shopService.getProductsByCategory(category)
       .subscribe(() => {
         this.cargando = false;
-        console.log(this.products);
       })
   }
 

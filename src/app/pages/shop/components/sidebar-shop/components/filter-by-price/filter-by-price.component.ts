@@ -25,7 +25,6 @@ export class FilterByPriceComponent {
   };
 
   onFilterByPrice(min: number, max: number): void {
-    console.log(min,max);
     this.shopService.setPriceRange(min, max);
   }
 

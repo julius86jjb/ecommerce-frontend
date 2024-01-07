@@ -32,13 +32,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart$
       .subscribe((cart) => {
-        console.log(cart);
         this.cartItems = cart.items.length
       })
   }
 
   openMobileMenu() {
-    console.log('pasa por headerts');
     this.showMobileMenu = true
   }
 

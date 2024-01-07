@@ -1,5 +1,4 @@
-import { Component, computed, inject, signal, OnInit } from '@angular/core';
-import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { Component, inject, OnInit } from '@angular/core';
 import { ShopService } from '../../../../services/shop.service';
 
 @Component({

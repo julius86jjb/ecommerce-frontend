@@ -52,8 +52,6 @@ export class CartService {
     if (itemInCart) {
       if (itemInCart.quantity > 1) {
         itemInCart.quantity -= 1;
-        console.log(this.cart.value)
-
       } else {
         this.removeFromCart(item);
       }

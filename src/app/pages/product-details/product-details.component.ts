@@ -84,7 +84,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   getProductsRelated(product: Product): void {
     this.shopService.getProductsByCategory(product.category)
       .subscribe((products) => {
-        console.log(products);
         this.productsRelated = products.filter((item) => item.id !== product.id)
       })
   }

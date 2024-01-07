@@ -54,7 +54,6 @@ export class ShopService {
   }
 
   getProducts(term?: string): Observable<Product[]> {
-    console.log(term);
     if (term) {
       this.setFiltersToNull();
       return this.http.get<Product[]>(`${this.baseUrl}/products`).pipe(
@@ -62,7 +61,6 @@ export class ShopService {
         tap((products: Product[]) => this.products = products)
       )
     }
-    console.log('entra');
     return this.http.get<Product[]>(`${this.baseUrl}/products`).pipe(
       tap((products: Product[]) => this.products = products)
     )
